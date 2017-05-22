@@ -1,0 +1,21 @@
+
+
+// aws cli create instance
+
+// ensure security group is created with 
+//   access to admin (create instace, run instance etc)
+//   add http protocols and ssh protocols
+
+// get the instance id to be created
+$  aws ec2 run-instances --image-id <<ami id>> --count 1 --instance-type <<type>> --key-name <<key pair>> --security-groups <<sec group>>    
+[optional] --user-data file:///home/major/doccuements/script.sh
+
+
+// how to connect via ssh
+$  ssh -i /home/major/.ssh/mn-key.pem <<inst public addr>>
+
+
+
+
+
+
