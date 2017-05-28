@@ -1,0 +1,27 @@
+
+// aws cli setup on ubuntu
+
+// ensure pip installed
+	$ pip --version
+
+//install pip if not installed
+	$ sudo apt-get update
+	$ sudo apt-get -y install python-pip
+
+// install aws cli
+http://docs.aws.amazon.com/cli/latest/userguide/installing.html
+	
+	$ pip install --upgrade --user awscli
+
+// verify aws is installed? 
+  $ aws --help
+
+// if not follow the link - aws is may be installed but the env path is not set on the terminal
+http://docs.aws.amazon.com/cli/latest/userguide/awscli-install-linux-troubleshooting.html
+
+   OR run the command for the terminal to work
+   $ export PATH=~/.local/bin:$PATH
+
+// this should show the aws cli is installed
+   $ aws --help
+   
