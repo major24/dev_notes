@@ -26,6 +26,9 @@
 // profile =        GR_GG_COF_AWS_Card_Dev_Developer
 // mykey =          ~/Documents/awskey/mn-awsdevkey   (on ubuntu jumpbx)
 
+// in order to run command from corp network, we need to have the aws congig/credentials (security tokens) must be downloaded and saved.
+// there is tool to get this done in linux/windows. (linux has setup errors but windows works). install the windows app and follow 
+// instructions to get the security token.
 
 
 
