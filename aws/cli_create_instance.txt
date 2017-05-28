@@ -1,17 +1,31 @@
 
 
 // aws cli create instance - on own aws account
-
+//---------------------------------------------------------------------------------------------------------------
 // ensure security group is created with 
 //   access to admin (create instace, run instance etc)
-//   add http protocols and ssh protocols
+//   add http protocols and ssh protocols to the group
+//   download the key pair.pem and store in .ssh folder
 
-// get the instance id to be created
-$  aws ec2 run-instances --image-id <<ami id>> --count 1 --instance-type <<type>> --key-name <<key pair>> --security-groups <<sec group>>    
+// simple instance to be created
+    $ aws ec2 run-instances --image-id <<ami id>> --count 1 --instance-type <<type>> --key-name <<key pair>> --security-groups <<sec group>>    
 [optional] --user-data file:///home/major/doccuements/script.sh
+// this optional provides additional setup such as web server setups (apache2 / tomcat etc)
 
-// how to connect via ssh
-$  ssh -i /home/major/.ssh/mn-key.pem <<inst public addr>>
+// how to connect via ssh. connection info can be accessed from the aws web console
+    $ ssh -i /home/major/.ssh/mn-key.pem <<inst public addr>>
+//----------------------------------------------------------------------------------------------------------------
+
+
+// aws cli create instance - on Cap1 account
+// For corp networks, ensure to get the right role and previleges
+
+// security group = desc: DB-SG, security-group-ids: sg-00d88764
+// subnet-id =      subnet-e227c9b9 
+// region =         us-east-1
+// profile =        GR_GG_COF_AWS_Card_Dev_Developer
+// mykey =          ~/Documents/awskey/mn-awsdevkey   (on ubuntu jumpbx)
+
 
 
 
