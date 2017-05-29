@@ -46,7 +46,7 @@
 // copy and paste credentials contents. (config contents does not change)
 
 // this should enable to create ec2 instance via awscli
-
+$ aws ec2 run-instances --dry-run --image-id ami-11094e06 --instance-type t2.micro --count 1 --key-name mn-awsdevkey --security-group-ids sg-00d88764 --subnet-id subnet-e227c9b9 --region us-east-1 --profile GR_GG_COF_AWS_Card_Dev_Developer --tag-specifications 'ResourceType=instance,Tags=[{Key=mnwebserver,Value=mnqa}]'
 
 
 
