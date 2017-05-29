@@ -27,8 +27,32 @@
 // mykey =          ~/Documents/awskey/mn-awsdevkey   (on ubuntu jumpbx)
 
 // in order to run command from corp network, we need to have the aws congig/credentials (security tokens) must be downloaded and saved.
+// these tokens are valid for and hour to connect via awscli
 // there is tool to get this done in linux/windows. (linux has setup errors but windows works). install the windows app and follow 
-// instructions to get the security token.
+// instructions below to get the security token.
+       https://pulse.kdc.capitalone.com/docs/DOC-120408
+
+
+// get security tokens in windows, open cmd and run..
+    c:\Program Files\SecurityTokensService\awstokens.exe   (if error re --gen, then run   awstokens.exe --gen-config)
+// enter eid and network pwd
+    
+// this will download tokens and save it to (usually in) C:\Users\xvf093\.aws\ [config, credintials files]
+// open both files using notepad and copy and paste the contents in ubuntu files
+// in ubuntu: 
+    $ cd ~/.aws
+    $ ls                  // list files
+    $ mousepad config     // open file in mousepad. 
+// copy and paste credentials contents. (config contents does not change)
+
+// this should enable to create ec2 instance via awscli
+
+
+
+
+
+
+
 
 
 
