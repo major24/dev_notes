@@ -1,5 +1,7 @@
 test file added by dev1
 
-function getuser(){
-	return 'major';
+// this is comment added by dev2
+function getuser(id){
+	var x = this.service.get_user(id);
+	return x;
 }
