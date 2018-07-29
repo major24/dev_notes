@@ -3,8 +3,7 @@
 
 
 
-// --------------------------------------------------------------------------------------------------
-// Rebase
+// --- REBASE ------------------------------------------------------------------------------------------------
 // When you are working in a branch and wanted get the latest from remote to ensure you in align with remote
 https://benmarshall.me/git-rebase/
 
@@ -23,9 +22,10 @@ $$ git rebase --continue
 // --------------------------------------------------------------------------------------------------
 
 
-// Reset a file (COMMITTED in local) to master branch
-// Ensure you have the latest file in master branch
+// --- RESET FILE -----------------------------------------------------------------------------------------------
+// Reset a file (COMMITTED in local) to master or remote branch
+// Ensure you have the latest file in your local master branch. if not fetch from origin
 $$ git checkout <<feature branch>>
 $$ git checkout origin/master [filename]
-
+// --------------------------------------------------------------------------------------------------
 
