@@ -1,0 +1,31 @@
+
+
+
+
+
+// --------------------------------------------------------------------------------------------------
+// Rebase
+// When you are working in a branch and wanted get the latest from remote to ensure you in align with remote
+https://benmarshall.me/git-rebase/
+
+$$ git checkout master         // goto master branch and get all latest changes
+$$ git fetch --all
+$$ git pull                    // this should get all latest from remote and your local master should equal to remote master
+
+$$ git checkout <<feature branch>>    // ensure all your changes have been committed
+$$ git rebase master                  // this with try to merge.
+// if merge conflicts, resoleve the conflict first
+// then add those merge fixes 
+$$ git add .
+// then contine
+$$ git rebase --continue
+// Rebase end - This should have merged latest remote changes with your local changes 
+// --------------------------------------------------------------------------------------------------
+
+
+// Reset a file (COMMITTED in local) to master branch
+// Ensure you have the latest file in master branch
+$$ git checkout <<feature branch>>
+$$ git checkout origin/master [filename]
+
+
