@@ -3,29 +3,48 @@
 
 
 
-// --- REBASE ------------------------------------------------------------------------------------------------
+
+
+// --- REBASE ---------------------------------------------------------------------------------------------
 // When you are working in a branch and wanted get the latest from remote to ensure you in align with remote
 https://benmarshall.me/git-rebase/
 
-$$ git checkout master         // goto master branch and get all latest changes
-$$ git fetch --all
-$$ git pull                    // this should get all latest from remote and your local master should equal to remote master
+// ** crate a backup branch incase changes are overwritten **
+git checkout master         // goto master branch and get all latest changes
+git fetch --all
+git pull                    // this should get all latest from remote and your local master should equal to remote master
 
-$$ git checkout <<feature branch>>    // ensure all your changes have been committed
-$$ git rebase master                  // this with try to merge.
+git checkout <<feature branch>>    // ensure all your changes have been committed
+git rebase master                  // this with try to merge.
 // if merge conflicts, resoleve the conflict first
 // then add those merge fixes 
-$$ git add .
-// then contine
-$$ git rebase --continue
+git add .
+// then continue
+git rebase --continue
 // Rebase end - This should have merged latest remote changes with your local changes 
 // --------------------------------------------------------------------------------------------------
 
 
-// --- RESET FILE -----------------------------------------------------------------------------------------------
+// --- RESET FILE -----------------------------------------------------------------------------------
 // Reset a file (COMMITTED in local) to master or remote branch
 // Ensure you have the latest file in your local master branch. if not fetch from origin
-$$ git checkout <<feature branch>>
-$$ git checkout origin/master [filename]
+git checkout <<feature branch>>
+git checkout origin/master [filename]
 // --------------------------------------------------------------------------------------------------
 
+
+// --- MERGE between two local branches -------------------------------------------------------------
+// Start a new feature
+git checkout -b new-feature master
+// Edit files
+git commit -a -m "Start developing a feature"
+// In the middle of our feature, we realize there’s a security hole in our project:
+// Create a hotfix branch based off of master
+git checkout -b hotfix master
+// Edit files
+git commit -a -m "Fix security hole"
+// Merge back into master
+git checkout master
+git merge hotfix
+git branch -d hotfix
+// ------------------------------------------------------------------------------------------------
