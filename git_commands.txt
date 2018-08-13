@@ -1,7 +1,27 @@
 
-
-
-
+// --- Adding a new project from local to git repo -------------------------------------------------------
+// create new repo in the git. init with readme file
+// naviage to your local folder
+git init        // will initialize an empty file
+// add .gitignore file and update excluded files
+git add .
+git commit -m "inital commit"
+git remote add origin <<remote url.git>>
+// check the changes
+git remote -v
+git push origin master
+// at this time may/will get an error 'remote changes are not updated in local' (e.g readme file)
+// we need to git pull to update our branch(master) with remote(master)
+git pull
+// may get branch not set
+git branch --set-upstream-to=origin/master master
+// may get an error with unrelated histories
+git pull --allow-unrelated-histories
+// now update your local
+git add .
+git commit -m "updated readme file with master"
+git push     // your git repo should have updated with your local project
+// --------------------------------------------------------------------------------------------------
 
 
 
