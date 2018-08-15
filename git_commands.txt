@@ -24,6 +24,18 @@ git push     // your git repo should have updated with your local project
 // --------------------------------------------------------------------------------------------------
 
 
+// --- Changin remote repo from one loc to another repo ---------------------------------------------------
+// if you cloned from a repo.A and you want to push changes to repo.M
+// create repo.M in git
+git remote -v   // this will show existing origin. you want to change this repo.M
+git remote set-url origin <<new repo.M.git url>>
+git remote -v    // verify the orign is changed
+git pull --allow-unrelated-histories   // you need this tag
+// update any mismatches. git add .  and git commit to ensure...git pull to ensure
+git push        // should push the file to new repo
+
+// --------------------------------------------------------------------------------------------------
+
 
 // --- REBASE ---------------------------------------------------------------------------------------------
 // When you are working in a branch and wanted get the latest from remote to ensure you in align with remote
