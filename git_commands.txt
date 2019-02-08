@@ -81,6 +81,17 @@ git merge hotfix
 git branch -d hotfix
 // ------------------------------------------------------------------------------------------------
 
+// --- push from local branch to git repo as new branch (branch not exists in git repo) ---------------
+git clone <<repo.git>>            // getting the original
+git checkout -b test_branch1      // 
+// add changes to the files
+// push to remote repo as new branch
+ git push -u origin feature_branch_name
+ // you can do pull request to merge the branch to the master
+// -----------------------------------------------------------------------------------------------------
+
+
+
 // --- MERGE additional info ----------------------------------------------------------------------
 // https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
 // ------------------------------------------------------------------------------------------------
