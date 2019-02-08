@@ -91,6 +91,15 @@ git checkout -b test_branch1      //
 // -----------------------------------------------------------------------------------------------------
 
 
+// --- get new code from remote branch (not master)------------------------------------------------
+git clone <<repo.git>>
+// cd into the folder
+// check remote branch
+git branch -r    // will show all the branches and master
+git checkout -b <<branch_name>> origin/<<branch_name>>    // should download the code from the branch
+
+//------------------------------------------------------------------------------------------------
+
 
 // --- MERGE additional info ----------------------------------------------------------------------
 // https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
