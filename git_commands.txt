@@ -97,7 +97,8 @@ git clone <<repo.git>>
 // check remote branch
 git branch -r    // will show all the branches and master
 git checkout -b <<branch_name>> origin/<<branch_name>>    // should download the code from the branch
-
+// now make changes..
+git push // should update remote repo
 //------------------------------------------------------------------------------------------------
 
 
