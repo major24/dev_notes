@@ -21,6 +21,8 @@ git pull --allow-unrelated-histories
 git add .
 git commit -m "updated readme file with master"
 git push     // your git repo should have updated with your local project
+NOTE: You can push force, if reqd to override all the changes. Ok in my cases
+git push -f origin master
 // --------------------------------------------------------------------------------------------------
 
 
