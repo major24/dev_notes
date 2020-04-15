@@ -1,0 +1,52 @@
+Git Squash
+See below for descriptions:
+https://thoughtbot.com/blog/git-interactive-rebase-squash-amend-rewriting-history#reword-other-commit-messages-take-2
+https://www.internalpointers.com/post/squash-commits-into-one-git
+
+$ git log –oneline
+$ git commit –amend    // will open terminal to update last commit message
+// To squash 
+$ git rebase -i HEAD~n     // n = number of commits
+// SOTI PR 
+$ git commit -m “MC-99999: Change API feature”        // JIRA#: space title
+$ git push -f origin <<branch name>     // -f if already pushed
+
+
+
+
+In local user has 3 commits. Last commit was “C3-file 13 added”
+ 
+How to create PR with ONLY ONE commit message.
+$ git rebase -i HEAD~3    // # 3 is the number of commits you want to work with…
+This will open vi editor
+ 
+
+Vi editor
+Shift + i to insert mode
+Now squash last 2 picks, by marking s <<guid>>
+ 
+Save.
+ESC -> Shift + : wq
+It Will open a terminal to update commit message. Update or remove the messag
+Vi  -> dd    // will delete line
+ 
+Save
+Esc Shift + :   wq
+Log – Now only shows one commit.
+ 
+Git push
+$ git push origin <<branch name>>    // if already pushed use -f
+ 
+
+When trying to create PR see, only ONE commit available
+e.g. f9a19c8
+ 
+
+Ensure ONLY one shows once PR created
+
+ 
+
+
+
+
+
